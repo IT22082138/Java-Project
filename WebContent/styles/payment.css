@@ -1,0 +1,733 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Signika+Negative:wght@500&display=swap');
+
+
+:root
+{
+    --green: orange;
+    --dark-color: darkorange;
+    --black: #444;
+    --light-color: #666;
+    --border: .1rem solid rgba(0,0,0,.1);
+    --border-hover: .1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    
+    transition: all .2s linear;
+    transition: width none;
+}
+
+html
+{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar
+{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb
+{
+    background: var(--black);
+}
+
+section 
+{
+    padding:5rem 9%;
+}
+
+.heading
+{
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heading::before
+{
+    content: '';
+    position: absolute;
+    top:50%; left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: .01rem;
+    background: rgba(0,0,0,.1);
+    z-index: -1;
+}
+
+.heading span
+{
+    font-size: 3rem;
+    padding: .5rem 2rem;
+    color: var(--black);
+    background: #fff;
+    border: var(--border);
+}
+
+.btn
+{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: black;
+    background: peachpuff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover
+{
+    background: orange;
+}
+
+.header .header-1
+{
+    background: #fff;
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo
+{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .header-1 .logo i
+{
+    color:darkgreen;
+}
+
+.header .header-1 .search-form
+{
+    width: 50rem;
+    height: 5rem;
+    border: var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.header .header-1 .search-form input
+{
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color:darkgreen;
+}
+
+.header .header-1 .search-form label
+{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: darkgreen;
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover
+{
+    color: darkgreen;
+}
+
+
+#search-btn
+{
+    display: none;
+}
+
+.header .header-2
+{
+    background: var(--dark-color);
+}
+
+.header .header-2 .navbar
+{
+    text-align: center;
+}
+
+.header .header-2 .navbar a
+{
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover
+{
+    background: var(--green);
+}
+
+.header .header-2.active
+{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index: 1000;
+}
+
+
+
+/* start: Payment */
+.payment-section {
+    padding: 48px 0;
+}
+.payment-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.payment-header {
+    padding: 24px;
+    background-color: peachpuff;
+    border-radius: 12px;
+    padding-bottom: 72px;
+}
+.payment-header-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: peachpuff;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.payment-header-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+.payment-header-description {
+    font-size: 15px;
+    color: gray;
+    line-height: 1.5;
+}
+.payment-content {
+    padding: 24px;
+    margin-top: -64px;
+    position: relative;
+}
+.payment-content::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    height: 16px;
+    border-radius: 4px;
+    background-color: peachpuff;
+}
+.payment-body {
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .05), inset 0 8px 0 rgba(0, 0, 0, .05);
+    position: relative;
+    padding-top: 8px;
+    overflow: hidden;
+}
+.payment-plan {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+.payment-plan-type {
+    width: 40px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+.payment-plan-info {
+    width: 100%;
+    margin-right: 8px;
+    display: grid;
+}
+.payment-plan-info-name {
+    font-size: 13px;
+    color: gray;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.payment-plan-info-price {
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.payment-plan-change {
+    color: green;
+    font-size: 12px;
+    font-weight: 600;
+    text-underline-offset: 2px;
+}
+.payment-plan-change:hover {
+    color: orange;
+}
+.payment-summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+}
+.payment-summary-name {
+    font-size: 14px;
+    color: gray;
+}
+.payment-summary-price {
+    font-weight: 500;
+    font-size: 15px;
+}
+.payment-summary-divider {
+    width: calc(100% - 16px);
+    height: 0;
+    margin: 12px auto;
+    border-bottom: 1px dashed gray;
+    position: relative;
+}
+.payment-summary-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: gray;
+    box-shadow: inset 0 2px 16px rgba(0, 0, 0, .05);
+}
+.payment-summary-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: gray;
+    box-shadow: inset 0 2px 16px rgba(0, 0, 0, .05);
+}
+.payment-summary-total {
+    padding-bottom: 16px;
+}
+.payment-summary-total .payment-summary-name {
+    color: gray;
+}
+.payment-summary-total .payment-summary-price {
+    font-size: 16px;
+    color: orangered;
+    font-weight: 600;
+}
+.payment-right {
+    min-width: 0;
+}
+.payment-form {
+    padding: 24px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .05);
+}
+.payment-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.payment-method {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 6px 0;
+    margin-bottom: 12px;
+    width: 100%;
+}
+.payment-method input {
+    display: none;
+}
+.payment-method-item {
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin-right: 12px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+input:checked + .payment-method-item {
+    border-color: peachpuff;
+}
+input:checked + .payment-method-item::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: green;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjAwMDcgMTUuMTcwOUwxOS4xOTMxIDUuOTc4NTJMMjAuNjA3MyA3LjM5MjczTDEwLjAwMDcgMTcuOTk5M0wzLjYzNjcyIDExLjYzNTRMNS4wNTA5MyAxMC4yMjEyTDEwLjAwMDcgMTUuMTcwOVoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMSkiPjwvcGF0aD48L3N2Zz4=");
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.payment-method-item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.payment-form-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+.payment-form-control {
+    outline: transparent;
+    background-color: white;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    padding: 24px 16px 8px 16px;
+    width: 100%;
+    transition: all .15s ease-in-out;
+}
+.payment-form-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    color: gray;
+    pointer-events: none;
+    transition: all .1s ease-in-out;
+}
+.payment-form-control:focus {
+    outline: 2px solid peachpuff;
+    border-color: peachpuff;
+}
+.payment-form-control:focus + .payment-form-label,
+.payment-form-control:not(:placeholder-shown) + .payment-form-label {
+    top: 30%;
+    font-size: 12px;
+}
+.payment-form-label-required::after {
+    content: ' *';
+    color: red;
+}
+.payment-form-group-flex {
+    display: flex;
+    align-items: center;
+}
+.payment-form-group-flex > * {
+    width: 100%;
+}
+.payment-form-group-flex > :not(:last-child) {
+    margin-right: 12px;
+}
+.payment-form-submit-button {
+    background-color: peachpuff;
+    border-radius: 8px;
+    outline: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 600;
+    padding: 16px;
+    transition: all .15s ease-in-out;
+}
+.payment-form-submit-button:hover {
+    background-color: orange;
+}
+.payment-form-submit-button > i {
+    margin-right: 8px;
+}
+/* end: Payment */
+
+
+
+/* start: Breakpoints */
+@media screen and (max-width: 767px) {
+    .payment-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .payment-content {
+        padding: 16px;
+    }
+    .payment-content::before {
+        top: 16px;
+        width: calc(100% - 20px);
+    }
+    .payment-form-group-flex {
+        display: block;
+    }
+}
+/* end: Breakpoints */
+
+
+
+/*search*/
+
+
+.payment-form-group-search {
+    position: relative;
+    margin-bottom: 16px;
+}
+.payment-form-control-search {
+    outline: transparent;
+    background-color: white;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    padding: 24px 16px 8px 16px;
+    width: 50%;
+    transition: all .15s ease-in-out;
+}
+.payment-form-label-search {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 360px;
+    color: gray;
+    pointer-events: none;
+    transition: all .1s ease-in-out;
+}
+.payment-form-control-search:focus {
+    outline: 2px solid peachpuff;
+    border-color: peachpuff;
+}
+.payment-form-control-search:focus + .payment-form-label-search,
+.payment-form-control-search:not(:placeholder-shown) + .payment-form-label-search {
+    top: 30%;
+    font-size: 12px;
+}
+.payment-form-label-required-search::after {
+    content: ' *';
+    color: red;
+}
+.payment-form-group-search-flex {
+    display: flex;
+    align-items: center;
+}
+.payment-form-group-search-flex > * {
+    width: 100%;
+}
+.payment-form-group-search-flex > :not(:last-child) {
+    margin-right: 12px;
+}
+
+
+
+
+/*Update*/
+
+.payment-form-update-button {
+    background-color: peachpuff;
+    border-radius: 8px;
+    outline: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 600;
+    padding: 16px;
+    transition: all .15s ease-in-out;
+}
+.payment-form-update-button:hover {
+    background-color: orange;
+}
+.payment-form-update-button > i {
+    margin-right: 8px;
+}
+
+.payment-form-group-ud {
+    position: relative;
+    margin-bottom: 16px;
+}
+.payment-form-control-ud {
+    outline: transparent;
+    background-color: white;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    padding: 24px 16px 8px 16px;
+    width: 50%;
+    transition: all .15s ease-in-out;
+}
+.payment-form-label-ud {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 350px;
+    color: gray;
+    pointer-events: none;
+    transition: all .1s ease-in-out;
+}
+.payment-form-control-ud:focus {
+    outline: 2px solid peachpuff;
+    border-color: peachpuff;
+}
+.payment-form-control-ud:focus + .payment-form-label-ud,
+.payment-form-control-ud:not(:placeholder-shown) + .payment-form-label-ud {
+    top: 30%;
+    font-size: 12px;
+}
+.payment-form-label-required-ud::after {
+    content: ' *';
+    color: red;
+}
+.payment-form-group-ud-flex {
+    display: flex;
+    align-items: center;
+}
+.payment-form-group-ud-flex > * {
+    width: 100%;
+}
+.payment-form-group-ud-flex > :not(:last-child) {
+    margin-right: 12px;
+}
+
+
+/*success*/
+
+.payment-form-submit-button1 {
+    background-color: peachpuff;
+    border-radius: 8px;
+    outline: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 600;
+    padding: 16px;
+    transition: all .15s ease-in-out;
+}
+.payment-form-submit-button1:hover {
+    background-color: orange;
+}
+.payment-form-submit-button1 > i {
+    margin-right: 8px;
+}
+
+
+
+/*Viewpayment*/
+
+.payment-form-viwe-button {
+    background-color: peachpuff;
+    border-radius: 8px;
+    outline: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 600;
+    padding: 16px;
+    transition: all .15s ease-in-out;
+}
+.payment-form-viwe-button:hover {
+    background-color: orange;
+}
+.payment-form-viwe-button > i {
+    margin-right: 8px;
+}
+
+
+
+/*footer*/
+
+
+footer p{
+    padding:0;
+    font-size: 0.8em;
+    color: hsla(0, 50%, 100%, 0.35);
+    margin: 1em 0;
+    font-size: 1rem;
+}
+
+
+footer ul{
+    list-style: none;
+    display: flex;
+    margin: 1em 0; 
+}
+
+footer ul li a{
+    padding: 1em; 
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.904);
+    transition: 100ms;
+}
+footer ul li a:hover{
+    color: var(--primary);
+}
+
+footer{
+    width: 100%;
+    background: darkorange;
+    color: #fff; 
+    display: grid;
+    place-items: center;
+    padding: 2em; 
+    font-size: 1.2rem;
+}
+
+
+
+/* Sticky Footer Styling */
+body{
+    min-height: 100vh;
+}
+.sticky-footer{
+    position: sticky;
+    top: 100%;
+}
